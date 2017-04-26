@@ -3,6 +3,8 @@ from redis import Redis, RedisError
 import os
 import socket
 
+import time
+
 # Connect to Redis
 redis = Redis(host="redis", db=0)
 
@@ -14,6 +16,11 @@ def hello():
         visits = redis.incr('counter')
     except RedisError:
         visits = "<i>cannot connect to Redis, counter disabled</i>"
+
+	# while True: range(10000) and None; time.sleep(0.2)      # 1% CPU
+	while True: range(10000) and None; time.sleep(0.02)     # 15% CPU
+	# while True: range(10000) and None; time.sleep(0.002)    # 60% CPU
+	# while True: range(10000) and None; time.sleep(0.0002)   # 86% CPU
 
     html = "<h3>Hello {name}!</h3>" \
            "<b>Hostname:</b> {hostname}<br/>" \
