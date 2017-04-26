@@ -1,7 +1,7 @@
 version: "3"
 services:
   web:
-    image: luispuhl/heloo:0.1.0
+    image: luispuhl/heloo:0.2.0
     deploy:
       replicas: 5
       resources:
