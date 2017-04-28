@@ -1,0 +1,136 @@
+[
+    {
+        "ID": "r5g91nbo652t6bnvtgz0pwwsm",
+        "Version": {
+            "Index": 42092
+        },
+        "CreatedAt": "2017-04-28T16:11:19.4288489Z",
+        "UpdatedAt": "2017-04-28T16:11:34.4770248Z",
+        "Spec": {
+            "ContainerSpec": {
+                "Image": "redis:latest@sha256:079a8abb332d42953d72040baeb7beae1585b2ca08502e154fc761d5b1a32ade",
+                "Labels": {
+                    "com.docker.stack.namespace": "lab"
+                },
+                "Mounts": [
+                    {
+                        "Type": "volume",
+                        "Source": "redisVol-{{.Task.Slot}}",
+                        "Target": "/data"
+                    }
+                ]
+            },
+            "Resources": {},
+            "Placement": {
+                "Constraints": [
+                    "node.role == manager"
+                ]
+            },
+            "ForceUpdate": 0
+        },
+        "ServiceID": "mic0uxtzpice50dpblziaoe3u",
+        "Slot": 1,
+        "NodeID": "rh9lnoda3nhvdkfhb9w5ty6kj",
+        "Status": {
+            "Timestamp": "2017-04-28T16:11:34.4270647Z",
+            "State": "running",
+            "Message": "started",
+            "ContainerStatus": {
+                "ContainerID": "aec44f272db0c0121b9e60d8d9c8fb69ab53408d4239a42d77d28be2a56b3450",
+                "PID": 4378
+            },
+            "PortStatus": {}
+        },
+        "DesiredState": "running",
+        "NetworksAttachments": [
+            {
+                "Network": {
+                    "ID": "kk3tpil5larc8aoee9tzyhbtk",
+                    "Version": {
+                        "Index": 42057
+                    },
+                    "CreatedAt": "2017-04-26T19:18:20.107469Z",
+                    "UpdatedAt": "2017-04-28T16:11:18.9958359Z",
+                    "Spec": {
+                        "Name": "ingress",
+                        "Labels": {
+                            "com.docker.swarm.internal": "true"
+                        },
+                        "DriverConfiguration": {},
+                        "IPAMOptions": {
+                            "Driver": {},
+                            "Configs": [
+                                {
+                                    "Subnet": "10.255.0.0/16",
+                                    "Gateway": "10.255.0.1"
+                                }
+                            ]
+                        }
+                    },
+                    "DriverState": {
+                        "Name": "overlay",
+                        "Options": {
+                            "com.docker.network.driver.overlay.vxlanid_list": "4096"
+                        }
+                    },
+                    "IPAMOptions": {
+                        "Driver": {
+                            "Name": "default"
+                        },
+                        "Configs": [
+                            {
+                                "Subnet": "10.255.0.0/16",
+                                "Gateway": "10.255.0.1"
+                            }
+                        ]
+                    }
+                },
+                "Addresses": [
+                    "10.255.0.11/16"
+                ]
+            },
+            {
+                "Network": {
+                    "ID": "mesujufbjq4j1x5bbnrvl7an8",
+                    "Version": {
+                        "Index": 42058
+                    },
+                    "CreatedAt": "2017-04-27T18:21:39.9502986Z",
+                    "UpdatedAt": "2017-04-28T16:11:18.9969902Z",
+                    "Spec": {
+                        "Name": "lab_webnet",
+                        "Labels": {
+                            "com.docker.stack.namespace": "lab"
+                        },
+                        "DriverConfiguration": {
+                            "Name": "overlay"
+                        },
+                        "IPAMOptions": {
+                            "Driver": {}
+                        }
+                    },
+                    "DriverState": {
+                        "Name": "overlay",
+                        "Options": {
+                            "com.docker.network.driver.overlay.vxlanid_list": "4097"
+                        }
+                    },
+                    "IPAMOptions": {
+                        "Driver": {
+                            "Name": "default"
+                        },
+                        "Configs": [
+                            {
+                                "Subnet": "10.0.0.0/24",
+                                "Gateway": "10.0.0.1"
+                            }
+                        ]
+                    }
+                },
+                "Addresses": [
+                    "10.0.0.10/24"
+                ]
+            }
+        ]
+    }
+]
