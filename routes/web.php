@@ -17,12 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/tasks', function () {
-    $tasks = [
-      'store',
-      'laravel',
-      'docker',
-      'KILL ALL THE BUGS'
-    ];
+    $tasks = DB::table('tasks')->get();
   
     return view('tasks.index', compact('tasks'));
 });

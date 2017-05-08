@@ -23,7 +23,7 @@ Homestead.json
 composer.lock
 yarn.lock
 
-laradock/**
+laradock
 
 /.idea
 /.vagrant
