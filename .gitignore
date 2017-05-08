@@ -24,3 +24,8 @@ composer.lock
 yarn.lock
 
 laradock/**
+
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml

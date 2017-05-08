@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/tasks', function () {
+    $tasks = [
+      'store',
+      'laravel',
+      'docker',
+      'KILL ALL THE BUGS'
+    ];
+  
+    return view('tasks.index', compact('tasks'));
+});
